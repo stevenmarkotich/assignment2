@@ -1,0 +1,99 @@
+I finished the Git Lab tutorials on 10/18/2023, there is proof in the PDF I submitted.
+
+My GitHub account @stevenmarkotich was created on October 1, 2017
+
+Here is a link to the repository: https://github.com/stevenmarkotich/assignment2
+
+1: Paste the console output you saved at the end of step 3.C (2 points)
+
+stevenmarkotich@SMs-MacBook-Pro assignment2 % mkdir -p docs && git status > docs/status.txt
+
+stevenmarkotich@SMs-MacBook-Pro assignment2 % git add docs/status.txt
+stevenmarkotich@SMs-MacBook-Pro assignment2 % git commit -m "Exported git status output to
+docs/status.txt"
+[master caff812] Exported git status output to docs/status.txt
+ 1 file changed, 8 insertions(+)
+ create mode 100644 docs/status.txt
+stevenmarkotich@SMs-MacBook-Pro assignment2 % git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (4/4), 499 bytes | 499.00 KiB/s, done.
+Total 4 (delta 1), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/stevenmarkotich/assignment2
+   dedaad9..caff812  master -> master
+
+<<<HERE IS WHAT THE STATUS.TXT CONTAINED>>>
+
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	docs/
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+2: How many commits have been done to the repository (not only by you, but by anyone) so far? Write the git command you used to get this information (4 points)
+
+stevenmarkotich@SMs-MacBook-Pro assignment2 % git rev-list --all --count
+9
+
+Explanation: There has been a total of 9 commits from everyone.
+
+3: When was the README.md  file modified last? Write the git command you used to get this information (4 points)
+
+stevenmarkotich@SMs-MacBook-Pro assignment2 % git log -1 -- README.md
+commit dedaad9eba4405a5b2fe5b73c4babd41450182e1
+Author: Steven Markotich <stevenmarkotich@icloud.com>
+Date:   Thu Oct 19 19:01:31 2023 -0500
+
+    Updated information files. The information files have been updated to describe the current state of the repository. Repository owner information added to README.md
+stevenmarkotich@SMs-MacBook-Pro assignment2 %
+
+Explanation: This means that README.md was last updated on Thu Oct 19 19:01:31 2023.
+
+4: Mention two reasons why branches are used in a Git repository (4 points)
+
+The first reason is because you can isolate development from a stable version. 
+Thus, you can isolate features work on them, combine them with the master which makes it look like they were developed in parallel.
+This keeps the stable version safe while experimenting!
+The second reason is it allows for parallel development among multiple users. This means that everyone can work on an individual task and merge it together into one product that looks like it was created in parallel.
+Therefore, it allows for easy collaboration! 
+
+5: What is the difference between git log and git status? (4 points)
+
+"git log" shows the commit history (commit logs) while "git status" shows the current state of the files—the working tree status, specifically it displays
+the differences between the index file and the current HEAD commit, paths that have differences between the working tree and the
+index file, and paths in the working tree that are not tracked by Git.
+
+6: What command would you use to see the commits where “Vehicle.h” was one of the committed files? (4 points)
+
+git log -- Vehicle.h
+
+7: What command would you use to see the commits whose commit message contains the word “file”? (4 points)
+
+git log --grep="file"
+
+8: In the context of object-oriented programming (I) What is inheritance? (II) What is polymorphism? (III) What is encapsulation? (6 points)
+
+inheritance is a mechanism that allows a class to inherit properties and behaviors from another class.
+
+polymorphism is the ability of an object to take on many forms.
+
+encapsulation integrating data and methods into a single unit; this helps keep a class's variables hidden from other classes and can be accessed only by the methods of the class in which they are found. 
+
+9: What is the main difference between the “Dictator and Lieutenants” workflow and the “Integration manager” workflow? (5 points)
+
+The main difference between "Dictator and Lieutenants" and "Integration manager" workflow is how the contributions/pushes are handled.
+In D&L workflow, the lieutenants are in charge of merge changes and solving conflicts when developers push changes to assigned lieutenant repoistory; these act like a system of managers.
+Meanwhile, in Integration, the integration manager deals with pulling from individual developers and doing integration conflict resolution. 
+The big difference is hierarchy. D&L has more levels of authority while Integration has one central integration manager.
+
+10:  How would a team of 100 developers benefit from following the “Dictator and Lieutenants” workflow instead of the “Centralized” workflow? (5 points)
+
+A team of 100 developers would benefit from a D&L workflow because the reponsibilities of the project are distrubted among different lieutenants that oversee different sections of the projects.
+Having more managers eliminates a lot of the bottleneck that a single central integration manager would deal with. Having one person trying merge and solve conflicts of 100 developers is hectic. 
+D&L workflow would be much better for parallel development and reducing the amount of merge conflicts. The better hierarchy would result in better quality control, more regulation, and overall better software product.
